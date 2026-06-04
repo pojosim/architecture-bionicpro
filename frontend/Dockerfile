@@ -21,8 +21,6 @@ FROM nginx:alpine
 # Copy built assets from build stage
 COPY --from=build /app/build /usr/share/nginx/html
 
-COPY --from=build /app/public/silent-check-sso.html /usr/share/nginx/html/silent-check-sso.html
-
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 

@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
   <diagram name="Page-1" id="Vdj-dLDs9ZxfFK_ICv-k">
-    <mxGraphModel dx="3111" dy="2847" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1855" dy="1924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,6 +46,11 @@
         <mxCell id="-s9W17W-NFw-Ta7AQgpa-4" edge="1" parent="1" source="Lhtp9tOnbV0N8Cz71-gY-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Lhtp9tOnbV0N8Cz71-gY-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="dLPBSx-o7HXzE0Ct_N-H-1" connectable="0" parent="-s9W17W-NFw-Ta7AQgpa-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Сохранение телеметрии" vertex="1">
+          <mxGeometry relative="1" x="0.0422" as="geometry">
+            <mxPoint x="-47" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="4pM4tNIYo7VPntqDshPn-25" edge="1" parent="1" source="Lhtp9tOnbV0N8Cz71-gY-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="4pM4tNIYo7VPntqDshPn-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -54,7 +59,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <object placeholders="1" c4Name="API" c4Type="Container" c4Technology="e.g. SpringBoot, ElasticSearch, etc." c4Description="" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Lhtp9tOnbV0N8Cz71-gY-17">
+        <object placeholders="1" c4Name="REPORTS-API" c4Type="Container" c4Technology="e.g. SpringBoot, ElasticSearch, etc." c4Description="" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="Lhtp9tOnbV0N8Cz71-gY-17">
           <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" vertex="1">
             <mxGeometry height="120" width="240" x="827" y="780" as="geometry" />
           </mxCell>
@@ -203,7 +208,7 @@
         </mxCell>
         <mxCell id="4pM4tNIYo7VPntqDshPn-13" connectable="0" parent="4pM4tNIYo7VPntqDshPn-12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Выгрузка телеметрии&lt;br&gt;[JDBC]" vertex="1">
           <mxGeometry relative="1" x="-0.202" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-64" y="-20" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="4pM4tNIYo7VPntqDshPn-14" edge="1" parent="1" source="4pM4tNIYo7VPntqDshPn-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="4pM4tNIYo7VPntqDshPn-8">
@@ -211,7 +216,7 @@
         </mxCell>
         <mxCell id="4pM4tNIYo7VPntqDshPn-21" connectable="0" parent="4pM4tNIYo7VPntqDshPn-14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Загрузка отчетов&lt;br&gt;[JDBC]" vertex="1">
           <mxGeometry relative="1" x="-0.4033" y="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="-25" y="-21" as="offset" />
           </mxGeometry>
         </mxCell>
         <object placeholders="1" c4Name="ETL" c4Type="Container" c4Technology="Apache Airflow" c4Description="Выгружает данные из CRM и PostgreSQL в ClickHouse" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="4pM4tNIYo7VPntqDshPn-9">

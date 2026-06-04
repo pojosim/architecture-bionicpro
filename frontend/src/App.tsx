@@ -1,33 +1,29 @@
-import React from 'react';
-import { ReactKeycloakProvider } from '@react-keycloak/web';
-import Keycloak, { KeycloakConfig } from 'keycloak-js';
+import { useEffect, useState } from 'react';
 import ReportPage from './components/ReportPage';
+import LoginPage from './components/LoginPage';
 
-const keycloakConfig: KeycloakConfig = {
-    url: process.env.REACT_APP_KEYCLOAK_URL || 'http://localhost:8080',
-    realm: process.env.REACT_APP_KEYCLOAK_REALM || 'reports-realm',
-    clientId: process.env.REACT_APP_KEYCLOAK_CLIENT_ID || 'reports-frontend',
-};
+const BFF_URL = 'http://localhost:8081';
 
-const keycloak = new Keycloak(keycloakConfig);
+function App() {
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
-const initOptions = {
-    onLoad: 'check-sso',
-    pkceMethod: 'S256',
-    silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
-    checkLoginIframe: true,
-    checkLoginIframeInterval: 30,
-};
+    useEffect(() => {
+        fetch(`${BFF_URL}/auth/status`, { credentials: 'include' })
+            .then(res => {
+                if (res.ok) {
+                    setIsAuthenticated(true);
+                } else {
+                    setIsAuthenticated(false);
+                }
+            })
+            .catch(() => setIsAuthenticated(false));
+    }, []);
 
-const App: React.FC = () => {
-    return (
-        <ReactKeycloakProvider
-            authClient={keycloak}
-            initOptions={initOptions}
-        >
-            <ReportPage />
-        </ReactKeycloakProvider>
-    );
-};
+    if (isAuthenticated === null) {
+        return <div className="flex items-center justify-center min-h-screen">Загрузка...</div>;
+    }
+
+    return isAuthenticated ? <ReportPage /> : <LoginPage />;
+}
 
 export default App;
