@@ -76,7 +76,10 @@
             "temporary": false
           }
         ],
-        "realmRoles": ["prothetic_user"]
+        "realmRoles": ["prothetic_user"],
+        "attributes": {
+          "sensor_user_id": ["512"]
+        }
       },
       {
         "username": "prothetic2",
@@ -91,7 +94,10 @@
             "temporary": false
           }
         ],
-        "realmRoles": ["prothetic_user"]
+        "realmRoles": ["prothetic_user"],
+        "attributes": {
+          "sensor_user_id": ["953"]
+        }
       },
       {
         "username": "prothetic3",
@@ -106,7 +112,10 @@
             "temporary": false
           }
         ],
-        "realmRoles": ["prothetic_user"]
+        "realmRoles": ["prothetic_user"],
+        "attributes": {
+          "sensor_user_id": ["387"]
+        }
       }
     ],
     "clients": [
@@ -114,9 +123,38 @@
         "clientId": "reports-frontend",
         "enabled": true,
         "publicClient": true,
-        "redirectUris": ["http://localhost:3000/*"],
-        "webOrigins": ["http://localhost:3000"],
-        "directAccessGrantsEnabled": true
+        "redirectUris": ["http://localhost:3000/*", "http://localhost:8081/auth/callback"],
+        "webOrigins": ["http://localhost:3000", "http://localhost:8081"],
+        "directAccessGrantsEnabled": false,
+        "standardFlowEnabled": true,
+        "implicitFlowEnabled": false,
+        "attributes": {
+          "pkce.code.challenge.method": "S256"
+        },
+        "protocolMappers": [
+          {
+            "name": "sensor_user_id",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-attribute-mapper",
+            "config": {
+              "user.attribute": "sensor_user_id",
+              "claim.name": "sensor_user_id",
+              "access.token.claim": "true",
+              "id.token.claim": "true",
+              "jsonType.label": "int"
+            }
+          },
+          {
+            "name": "reports-frontend-audience",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-audience-mapper",
+            "config": {
+              "included.client.audience": "reports-frontend",
+              "id.token.claim": "true",
+              "access.token.claim": "true"
+            }
+          }
+        ]
       },
       {
         "clientId": "reports-api",
